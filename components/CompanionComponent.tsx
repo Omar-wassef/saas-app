@@ -37,9 +37,7 @@ const CompanionComponent = ({userName, userImage,companionId,voice,style,name,to
         const onCallStart = () => {setCallStatus(CallStatus.ACTIVE)}
         const onCallEnd = () => {
             setCallStatus(CallStatus.FINISHED)
-            if(companionId){
-                addToSessionHistory(companionId)
-            }
+            addToSessionHistory(companionId)
         }
         const onMessage = (message: Message)=>{
             if(message.type === 'transcript' && message.transcriptType === 'final'){
